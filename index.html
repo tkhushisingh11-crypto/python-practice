@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Special Question >_<</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: pink;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #ff4f81;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 17px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yes {
+            background: #ff4f81;
+            color: white;
+        }
+
+        #no {
+            background: #ddd;
+            color: #333;
+            position: absolute;
+        }
+
+        #message {
+            display: none;
+            color: #ff4f81;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1> A Little Question <3</h1>
+
+        <p>Would you like to go on a date? :)</p>
+
+        <button id="yes" onclick="yesClicked()">YES <3</button>
+
+        <button id="no"
+            onmouseover="moveButton()"
+            onclick="moveButton()">
+            NO T_T
+        </button>
+
+        <div id="message">
+            YAYYY! ^_^
+            <br><br>
+            That's a YES!
+        </div>
+
+    </div>
+
+    <script>
+
+        function moveButton() {
+
+            let noButton = document.getElementById("no");
+
+            let maxX = window.innerWidth - noButton.offsetWidth;
+            let maxY = window.innerHeight - noButton.offsetHeight;
+
+            let randomX = Math.random() * maxX;
+            let randomY = Math.random() * maxY;
+
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
+        }
+
+        function yesClicked() {
+
+            document.querySelector(".card").innerHTML = `
+                <h1>^_^ YAY! ^_^</h1>
+                <p>Thanks for answering! ._.</p>
+                <p>Have an amazing day! ^_^</p>
+            `;
+        }
+
+    </script>
+
+</body>
+</html>
